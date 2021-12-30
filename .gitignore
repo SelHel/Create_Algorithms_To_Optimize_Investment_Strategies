@@ -230,4 +230,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # Directory and file to ignore
-csv/
+output_csv/
