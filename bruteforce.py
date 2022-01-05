@@ -5,10 +5,10 @@ from pprint import pprint as pp
 BUDGET = 500
 
 
-def read_csv(file, delimiter=","):
+def read_and_clean_csv(file, delimiter=","):
     """
-    Méthode qui permet de lire un fichier csv et de retourner
-    les données récupérées.
+    Méthode qui permet de lire un fichier csv, de nettoyer
+    les données puis de les retourner sous forme de liste.
 
     Paramètres
     ----------
@@ -16,14 +16,15 @@ def read_csv(file, delimiter=","):
 
     Retour
     ------
-    Retourne une liste d'actions avec leurs noms, leurs coûts
+    Retourne une liste de dictionnaires d'actions avec leurs noms, leurs coûts
     et leurs bénéfices.
     """
     with open(file, newline="") as csvfile:
         reader = csv.DictReader(csvfile, delimiter=delimiter)
         actions = []
         for row in reader:
-            actions.append(row)
+            if float(row["price"]) > 0 and float(row["profit"]) > 0:
+                actions.append(row)
         return actions
 
 
@@ -35,7 +36,7 @@ def write_on_csv(data):
     ----------
     data : Données à écrire dans le fichier csv
     """
-    with open('csv/bruteforce.csv', 'w', newline='', encoding='UTF8') as f:
+    with open('output_csv/bruteforce.csv', 'w', newline='', encoding='UTF8') as f:
         csv.excel.delimiter = ','
         fieldnames = data[0].keys()
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -50,7 +51,7 @@ def bruteforce(action_list):
     """
     Méthode qui essaie toutes les différentes combinaisons d'actions possibles.
     Calcule le coût et le bénéfice total de chaque combinaison.
-    Écris le résultat dans un fichier csv puis le retourne.
+    Écrit le résultat dans un fichier csv puis le retourne sous forme de liste.
 
     Paramètres
     ----------
@@ -58,7 +59,7 @@ def bruteforce(action_list):
 
     Retour
     ------
-    Retourne la liste de toutes les combinaisons possibles.
+    Retourne la liste de toutes les combinaisons d'actions possibles.
     """
     comb = []
     for i in range(0, len(action_list)+1):
@@ -102,6 +103,6 @@ def best_investment(possibilities):
 
 
 if __name__ == "__main__":
-    actions = read_csv("csv/actions.csv", delimiter=";")
+    actions = read_and_clean_csv("csv/actions.csv", delimiter=";")
     possibilities = bruteforce(actions)
     best_investment(possibilities)
