@@ -231,3 +231,4 @@ $RECYCLE.BIN/
 
 # Directory and file to ignore
 output_csv/
+.flake8
