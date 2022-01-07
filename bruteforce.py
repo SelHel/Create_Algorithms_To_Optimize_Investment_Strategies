@@ -1,3 +1,4 @@
+import time
 from itertools import combinations
 from pprint import pprint as pp
 from utils import read_and_clean_csv
@@ -61,6 +62,8 @@ def best_investment(possibilities):
 
 
 if __name__ == "__main__":
+    start = time.time()
     actions = read_and_clean_csv("csv/actions.csv")
     possibilities = bruteforce(actions)
     best_investment(possibilities)
+    print(f"Temps d’exécution de la fonction : {time.time() - start} secondes.")
