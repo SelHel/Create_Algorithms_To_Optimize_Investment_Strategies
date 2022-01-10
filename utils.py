@@ -23,7 +23,7 @@ def read_and_clean_csv(file, delimiter=","):
                 price = float(row['price']) * 100
                 profit = float(row['profit'])
                 profit_in_cents = (profit * price) / 100
-                action_list.append((row['name'], int(price), profit_in_cents))
+                action_list.append((row['name'], int(price), profit, profit_in_cents))
         return action_list
 
 
@@ -42,5 +42,5 @@ def write_on_csv(data, budget):
 
         writer.writeheader()
         for decision in data:
-            if decision["price"] <= budget:
+            if decision["Investissement"] <= budget:
                 writer.writerow(decision)
