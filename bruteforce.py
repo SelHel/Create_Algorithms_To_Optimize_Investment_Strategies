@@ -51,6 +51,10 @@ def best_investment(possibilities):
     Paramètres
     ----------
     possibilities (list) : Liste de toutes les combinaisons d'actions possibles.
+
+    Retour
+    ------
+    Retoune la liste des meilleures actions à acheter, le gain et le coût total.
     """
     best_decision = {}
     max_profit = 0
@@ -58,12 +62,12 @@ def best_investment(possibilities):
         if p["price"] <= BUDGET and p["gain"] > max_profit:
             max_profit = p["gain"]
             best_decision = p
-    pp(best_decision)
+    return best_decision
 
 
 if __name__ == "__main__":
     start = time.time()
     actions = read_and_clean_csv("csv/actions.csv")
     possibilities = bruteforce(actions)
-    best_investment(possibilities)
-    print(f"Temps d’exécution de la fonction : {time.time() - start} secondes.")
+    pp(best_investment(possibilities))
+    print(f"Temps d’exécution de l'algorithme : {time.time() - start} secondes.")
