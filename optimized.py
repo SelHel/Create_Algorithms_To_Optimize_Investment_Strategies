@@ -5,6 +5,7 @@ from utils import read_and_clean_csv
 
 BUDGET = 50000
 
+
 def greedy(file):
     """
     Fonction qui permet de lire un fichier csv puis de trier une liste d'actions
@@ -16,7 +17,7 @@ def greedy(file):
 
     Retour
     ------
-    Retoune la liste des meilleures actions à acheter, le gain et l'investissement total.
+    Retourne la liste des meilleures actions à acheter, le gain et l'investissement total.
     """
     action_list = read_and_clean_csv(file)
     action_list.sort(key=lambda x: float(x[1]), reverse=True)
