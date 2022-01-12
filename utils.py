@@ -12,7 +12,7 @@ def read_and_clean_csv(file, delimiter=","):
 
     Retour
     ------
-    Retourne une liste de tuple d'actions avec leurs noms, leurs coûts
+    Retourne une liste de tuple d'actions avec leurs noms, leurs profit, leurs coûts
     et leurs bénéfices en centimes.
     """
     with open(file, newline="") as csvfile:

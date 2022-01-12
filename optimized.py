@@ -46,7 +46,7 @@ def knapsack(budget, action_list):
 
     Retour
     ------
-    Retourne le bénéfice total et la liste des meilleures actions à acheter.
+    Retourne la liste des meilleures actions à acheter, le gain et l'investissement total.
     """
     matrix = [[0 for x in range(budget + 1)] for x in range(len(action_list) + 1)]
     for action in range(1, len(action_list) + 1):
@@ -91,7 +91,7 @@ if __name__ == "__main__":
     print("----------------------------------------------------------------------")
     print("----------------------------------------------------------------------")
 
-    print("------------------------ Algorithme sac à dos ------------------------")
+    print("------------------------ Algorithme dynamique ------------------------")
     start = time.time()
     action_list = read_and_clean_csv(filename)
     pp(knapsack(BUDGET, action_list))
