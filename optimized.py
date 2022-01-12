@@ -26,7 +26,7 @@ def greedy(file):
     total_cost = 0
     gain = 0
     for action in action_list:
-        if total_cost + float(action[1]) <= BUDGET and float(action[1]) > 0 and float(action[2]) > 0:
+        if total_cost + float(action[1]) <= BUDGET:
             total_cost += float(action[1])
             gain += float(action[3])
             best_decision["Actions"].append(action[0])
