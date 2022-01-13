@@ -28,7 +28,7 @@ Le deuxième fichier **optimized.py** contient les deux algorithmes optimisés.<
 Le premier est un algorithme de type "glouton".<br>
 Il est plus simple à mettre en place et son temps d'exécution est plus rapide, mais sa solution est moins optimale en terme de rentabilité.
 
-Le deuxième est un algorithme de type "sac à dos".<br>
+Le deuxième est un algorithme de type "dynamique".<br>
 Il est plus complexe car il utilise la programmation dynamique.<br> Cet algorithme crée une matrice. Dans cette matrice, nous stockons des solutions optimales et pour obtenir la prochaine, nous devons utiliser la solution optimale précédente.<br>
 
 ## Prérequis
