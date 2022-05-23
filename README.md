@@ -36,7 +36,7 @@ Il est plus complexe car il utilise la programmation dynamique.<br> Cet algorith
 
 ## Installation du programme
 
-Après avoir téléchargé le dossier **OpenclassroomsProject7-master.zip** depuis ce lien [GitHub](https://github.com/SelHel/OpenclassroomsProject7.git).  
+Après avoir téléchargé le dossier **Create_Algorithms_To_Optimize_Investment_Strategies-master.zip** depuis ce lien [GitHub](https://github.com/SelHel/Create_Algorithms_To_Optimize_Investment_Strategies.git).  
 Extraire les fichiers dans un dossier de votre choix.  
 Ensuite, en utilisant le terminal sous Mac/Linux ou l'invite de commandes sous Windows :
 
